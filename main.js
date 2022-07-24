@@ -4,6 +4,39 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+// Add a click event listener to an element
+document.getElementsByClassName("like-glyph").addEventListener("click", () => {
+  // What we want to run when somebody clicks on an heart
+  mimicServerCall().then(() => {
+    // We got data back from the server
+
+  } ).catch((error) => {
+    // There was an error fetching the data from the server
+    // Print the error
+    console.log(error);
+    // Remove the hidden class name from the error modal
+    document.getElementById("modal").classList.remove("hidden");
+    // Show the error message ('error') in the error modal
+    document.getElementById("modal-message").innerHTML = error;
+
+    setTimeout( () => {
+      // Add .hidden class back to the error modal
+      document.getElementById("modal").classList.add("hidden");
+    }, 3000);
+
+
+  });
+  
+
+});
+
+
+
+
+
+    
+
+
 
 
 
